@@ -17,7 +17,8 @@ mongoose.connect(process.env.MONGODB_URL)
 
 // Middleware
 app.use(cors({
-    origin: 'https://mern-crud-frontend-mu.vercel.app/'
+    origin: 'https://mern-crud-frontend-mu.vercel.app/',
+    methods: ['GET', 'POST', 'PATCH', 'DELETE']
   }));
   
 app.use(express.json());
