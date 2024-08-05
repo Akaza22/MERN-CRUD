@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGODB_URL)
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: 'https://mern-crud-frontend-mu.vercel.app/'
   }));
   
 app.use(express.json());
