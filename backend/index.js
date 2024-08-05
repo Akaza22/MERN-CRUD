@@ -16,7 +16,10 @@ mongoose.connect(process.env.MONGODB_URL)
     .catch((error) => console.log('Koneksi database gagal:', error));
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000'
+  }));
+  
 app.use(express.json());
 
 // Menggunakan router untuk rute '/api'
