@@ -10,9 +10,6 @@ const EditUser = () => {
     const navigate = useNavigate();
     const apiUrl = process.env.REACT_APP_API_URL;
 
-    useEffect(() => {
-        getUserById();
-    }, []);
 
     const getUserById = async () => {
         try {
@@ -24,6 +21,10 @@ const EditUser = () => {
             console.error("There was an error fetching the user!", error);
         }
     };
+
+    useEffect(() => {
+        getUserById();
+    }, []);
 
     const updateUser = async (e) => {
         e.preventDefault();

@@ -6,10 +6,6 @@ const UserList = () => {
     const [users, setUsers] = useState([]);
     const apiUrl = process.env.REACT_APP_API_URL;
 
-    useEffect(() => {
-        getUsers();
-    }, []);
-
     const getUsers = async () => {
         try {
             const response = await axios.get(`${apiUrl}/users`);
@@ -18,6 +14,11 @@ const UserList = () => {
             console.error("There was an error fetching the users!", error);
         }
     };
+
+    
+    useEffect(() => {
+        getUsers();
+    }, []);
 
     const deleteUser = async (id) => {
         try {
