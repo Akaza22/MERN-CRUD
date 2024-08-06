@@ -16,7 +16,7 @@ const port = process.env.PORT || 5000;
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URL)
-    .then(() => console.log('Database connected'))
+    .then(() => console.log('Database connecte'))
     .catch((error) => console.log('Database connection failed:', error));
 
 // Configure CORS
