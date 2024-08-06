@@ -30,5 +30,5 @@ app.use('/api', userRoutes);
 
 // Start server
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`Server berjalan di port ${port}`);
 });
