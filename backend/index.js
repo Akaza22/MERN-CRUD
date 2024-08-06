@@ -6,7 +6,11 @@ import dotenv from 'dotenv';
 
 // Load environment variables
 dotenv.config();
-
+const corsConfig = {
+    origin: "*",
+    credential: true,
+    methods: ["GET", "POST", "PATCH", "PUT", "DELETE"]
+}
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -16,8 +20,8 @@ mongoose.connect(process.env.MONGODB_URL)
     .catch((error) => console.log('Database connection failed:', error));
 
 // Configure CORS
-app.use(cors());
-
+app.use(cors(corsConfig));
+app.options("", cors(corsConfig));
 // Middleware
 app.use(express.json());
 
