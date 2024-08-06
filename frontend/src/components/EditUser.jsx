@@ -13,7 +13,7 @@ const EditUser = () => {
 
     const getUserById = async () => {
         try {
-            const response = await axios.get(`${apiUrl}/users/${id}`);
+            const response = await axios.get(`${apiUrl}/api/users/${id}`);
             setName(response.data.name);
             setEmail(response.data.email);
             setGender(response.data.gender);
@@ -29,7 +29,7 @@ const EditUser = () => {
     const updateUser = async (e) => {
         e.preventDefault();
         try {
-            await axios.patch(`${apiUrl}/users/${id}`, {
+            await axios.patch(`${apiUrl}/api/users/${id}`, {
                 name,
                 email,
                 gender,

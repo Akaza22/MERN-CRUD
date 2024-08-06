@@ -12,7 +12,7 @@ const AddUser = () => {
     const saveUser = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`${apiUrl}/users`, {
+            await axios.post(`${apiUrl}/api/users`, {
                 name,
                 email,
                 gender
