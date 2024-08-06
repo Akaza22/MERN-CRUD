@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGODB_URL)
 
 // Configure CORS
 app.use(cors(corsConfig));
-app.options("", cors(corsConfig));
+
 // Middleware
 app.use(express.json());
 
